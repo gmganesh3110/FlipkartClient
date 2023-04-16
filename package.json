@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gmganesh3110.github.io/Flipkart/",
+  "homepage": "https://gmganesh3110.github.io/FlipkartClient/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
