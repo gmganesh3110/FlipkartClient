@@ -34,7 +34,7 @@ const Banner = () => {
       draggable={false}
       infinite={true}
       autoPlay={true}
-      autoPlaySpeed={1000}
+      autoPlaySpeed={3000}
       keyBoardControl={true}
       slidesToSlide={1}
     >
