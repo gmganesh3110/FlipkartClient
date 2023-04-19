@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const URL = "https://flipkartbackend-28wr.onrender.com/api";
-const URL = "http://localhost:5000/api";
+const URL = "https://flipkartbackend-28wr.onrender.com/api";
+// const URL = "http://localhost:5000/api";
 
 export const authenticateSingUp = async (data) => {
   try {
