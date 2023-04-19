@@ -69,6 +69,13 @@ const CreateAccount = styled(Typography)`
   font-weight: 600;
   cursor: pointer;
 `;
+const Error = styled(Typography)`
+  font-size: 10px;
+  color: #ff6161;
+  line-height: 0;
+  margin-top: 10px;
+  font-weight: 600;
+`;
 
 const accountInitialValue = {
   login: {
@@ -100,10 +107,12 @@ const LoginDialogue = ({ open, setOpen }) => {
   const [account, toggleAccount] = useState(accountInitialValue.login);
   const [signUp, setSignUp] = useState(initalSignUpValue);
   const [login, setlogin] = useState(initialLoginValue);
+  const [error, setError] = useState(false);
   const { setAccount } = useContext(DataContext);
   const handleClose = () => {
     setOpen(false);
     toggleAccount(accountInitialValue.login);
+    setError(false);
   };
   const toggleSignUp = () => {
     toggleAccount(accountInitialValue.signup);
@@ -133,6 +142,8 @@ const LoginDialogue = ({ open, setOpen }) => {
       handleClose();
       console.log(response.data);
       setAccount(response.data.data.firstName);
+    } else {
+      setError(true);
     }
   };
   return (
@@ -151,7 +162,7 @@ const LoginDialogue = ({ open, setOpen }) => {
             <Wrapper>
               <TextField
                 variant="standard"
-                label="Enter Email/Mobile Number"
+                label="Enter Username"
                 name="username"
                 onInput={onValueChange}
               ></TextField>
@@ -162,6 +173,7 @@ const LoginDialogue = ({ open, setOpen }) => {
                 onInput={onValueChange}
               ></TextField>
               <Text>By Continuing, You're agree to our policy</Text>
+              {error && <Error>Please enter valid username or password</Error>}
               <LoginButton onClick={loginUser}>Login</LoginButton>
               <Typography style={{ textAlign: "center" }}>OR</Typography>
               <RequestOTP>Request OTP</RequestOTP>
