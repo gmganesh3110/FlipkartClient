@@ -140,7 +140,6 @@ const LoginDialogue = ({ open, setOpen }) => {
     if (!response) return;
     if (response.status === 201) {
       handleClose();
-      console.log(response.data);
       setAccount(response.data.data.firstName);
     } else {
       setError(true);

@@ -3,10 +3,14 @@ import { bannerData } from "../../constants/data";
 import styled from "@emotion/styled";
 import "react-multi-carousel/lib/styles.css";
 
-const Image = styled("img")({
+const Image = styled("img")(({ theme }) => ({
   width: "100%",
-  height: 200,
-});
+  height: "280",
+  // [theme.breakpoints.down("sm")]: {
+  //   objectFit: "cover",
+  //   height: 180,
+  // },
+}));
 
 const responsive = {
   desktop: {
