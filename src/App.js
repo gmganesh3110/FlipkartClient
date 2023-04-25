@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Box style={{ marginTop: 54 }}>
           <Routes>
-            <Route path="/FlipkartClient" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<DetailsView />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
